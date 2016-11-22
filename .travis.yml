@@ -1,0 +1,8 @@
+language: php
+php:
+  - 7.0.9
+notifications:
+  email: false
+before_install:
+  - composer self-update
+  - composer install

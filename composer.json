@@ -1,0 +1,34 @@
+{
+  "name": "kolter/collections",
+  "description": "{description}",
+  "keywords": ["{tags}"],
+  "homepage": "https://github.com/Ozumas7/Collections",
+  "license": "GPL-3.0",
+  "authors": [
+    {
+      "name": "Pablo Luna",
+      "email": "skyluna7@gmail.com"
+    }
+  ],
+  "require": {
+    "kolter/comparator": "^v1.0.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "5.5.*"
+  },
+  "autoload": {
+    "psr-4": {
+      "Kolter\\Collections\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": { "Kolter\\Collections\\Tests\\": "tests/" }
+  },
+  "scripts": {
+    "post-update-cmd":
+    [
+      "php php-cs-fixer.phar fix src/",
+      "php php-cs-fixer.phar fix tests/"
+      ]
+  }
+}
