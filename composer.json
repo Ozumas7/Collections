@@ -1,7 +1,7 @@
 {
   "name": "kolter/collections",
   "description": "{description}",
-  "keywords": ["{tags}"],
+  "keywords": ["collections","lists","arrays","abstraction array","sort","each"],
   "homepage": "https://github.com/Ozumas7/Collections",
   "license": "GPL-3.0",
   "authors": [
