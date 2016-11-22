@@ -23,12 +23,5 @@
   },
   "autoload-dev": {
     "psr-4": { "Kolter\\Collections\\Tests\\": "tests/" }
-  },
-  "scripts": {
-    "post-update-cmd":
-    [
-      "php php-cs-fixer.phar fix src/",
-      "php php-cs-fixer.phar fix tests/"
-      ]
   }
 }
