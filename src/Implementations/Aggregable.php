@@ -28,6 +28,23 @@ trait Aggregable
     }
 
     /**
+     * @param $element
+     * @param null $key
+     * @return Collection
+     */
+    public function set($element, $key = null) : Collection
+    {
+        $aux = $this->getElements();
+        if (is_null($key)) {
+            $aux[] = $element;
+        } else {
+            $aux[$key] = $element;
+        }
+
+        return $this->return($aux);
+    }
+
+    /**
      * @param array $elements
      *
      * @return Collection

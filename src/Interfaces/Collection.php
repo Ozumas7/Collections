@@ -5,7 +5,7 @@ namespace Kolter\Collections\Interfaces;
 /**
  * Interface Collection.
  */
-interface Collection extends \Iterator
+interface Collection extends \Iterator, \ArrayAccess
 {
     /**
      * Collection constructor.

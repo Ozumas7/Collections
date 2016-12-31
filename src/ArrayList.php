@@ -138,4 +138,26 @@ class ArrayList implements Collection
     {
         return $this->elements[$key];
     }
+
+    public function offsetExists($offset)
+    {
+        return $this->containsKey($offset);
+    }
+
+    public function offsetGet($offset)
+    {
+        return ($this->containsKey($offset)) ? $this->get($offset) : null;
+    }
+
+    public function offsetSet($offset, $value)
+    {
+        $this->add($value,$offset);
+    }
+
+    public function offsetUnset($offset)
+    {
+        $this->remove($offset);
+    }
+
+
 }

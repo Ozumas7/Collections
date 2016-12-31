@@ -53,4 +53,18 @@ class ArrayListTest extends AbstractTest
 
         $arr2->noSuchElement(10);
     }
+
+    /**
+     *
+     */
+    public function testArrayAcces(){
+        $arr2 = Collections::newArrayList(1, 3, 4, 5);
+        $arr2[] = 8;
+
+        $arr2[1] = 5;
+
+        unset($arr2[0]);
+
+        $this->assertEquals($arr2->getElements(), [5, 4, 5,8]);
+    }
 }
