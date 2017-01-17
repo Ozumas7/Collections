@@ -57,7 +57,7 @@ class ArrayListTest extends AbstractTest
     /**
      *
      */
-    public function testArrayAcces(){
+    public function testArrayAccess(){
         $arr2 = Collections::newArrayList(1, 3, 4, 5);
         $arr2[] = 8;
 
