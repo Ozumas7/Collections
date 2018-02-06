@@ -8,7 +8,7 @@ use Kolter\Collections\Implementations\Modificable;
 use Kolter\Collections\Implementations\Removable;
 use Kolter\Collections\Implementations\Selectable;
 use Kolter\Collections\Implementations\Aggregable;
-use Kolter\Collections\Implementations\Iterable;
+use Kolter\Collections\Implementations\IterableArray;
 use Kolter\Collections\Implementations\Serializable;
 use Kolter\Collections\Implementations\Sorteable;
 use Kolter\Collections\Implementations\Usable;
@@ -19,7 +19,7 @@ use Kolter\Collections\Interfaces\Collection;
  */
 class ArrayList implements Collection
 {
-    use Modificable,Calculable,Selectable,Removable,Iterable,Aggregable,Usable,Sorteable,Serializable;
+    use Modificable,Calculable,Selectable,Removable,IterableArray,Aggregable,Usable,Sorteable,Serializable;
 
     /**
      * @var bool

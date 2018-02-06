@@ -5,7 +5,7 @@ namespace Kolter\Collections\Implementations;
 /**
  * Class Iterable.
  */
-trait Iterable
+trait IterableArray
 {
     /**
      * @var int
