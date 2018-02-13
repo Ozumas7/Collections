@@ -4,12 +4,17 @@ namespace Kolter\Collections\Implementations;
 
 use Kolter\Collections\Interfaces\Collection;
 
+/**
+ * Trait Removable
+ * @package Kolter\Collections\Implementations
+ */
 trait Removable
 {
     /**
      * @param $mixed
      *
      * @return Collection
+     * @throws \Kolter\Collections\Exceptions\NoSuchElementException
      */
     public function remove($mixed) : Collection
     {
@@ -28,6 +33,7 @@ trait Removable
      * @param $element
      *
      * @return Collection
+     * @throws \Kolter\Collections\Exceptions\NoSuchElementException
      */
     public function removeElement($element) : Collection
     {

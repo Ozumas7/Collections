@@ -6,7 +6,7 @@ use Kolter\Collections\Interfaces\Collection;
 use Kolter\Comparator\Comparator;
 
 /**
- * Class KlistSorteable.
+ * Class Sorteable.
  */
 trait Sorteable
 {

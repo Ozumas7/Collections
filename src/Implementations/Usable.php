@@ -2,7 +2,6 @@
 
 namespace Kolter\Collections\Implementations;
 
-use Kolter\Collections\Collections;
 use Kolter\Collections\Interfaces\Collection;
 
 /**
@@ -15,6 +14,7 @@ trait Usable
      * @param bool $strict
      *
      * @return mixed
+     * @throws \Kolter\Collections\Exceptions\NoSuchElementException
      */
     public function getKey($element, $strict = false)
     {
@@ -80,7 +80,7 @@ trait Usable
     }
 
     /**
-     * @return Collection
+     * @return array
      */
     public function keys() : array
     {

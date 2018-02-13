@@ -139,21 +139,37 @@ class ArrayList implements Collection
         return $this->elements[$key];
     }
 
+    /**
+     * @param mixed $offset
+     * @return bool
+     */
     public function offsetExists($offset)
     {
         return $this->containsKey($offset);
     }
 
+    /**
+     * @param mixed $offset
+     * @return bool|mixed|null
+     */
     public function offsetGet($offset)
     {
         return ($this->containsKey($offset)) ? $this->get($offset) : null;
     }
 
+    /**
+     * @param mixed $offset
+     * @param mixed $value
+     */
     public function offsetSet($offset, $value)
     {
         $this->add($value,$offset);
     }
 
+    /**
+     * @param mixed $offset
+     * @throws NoSuchElementException
+     */
     public function offsetUnset($offset)
     {
         $this->remove($offset);

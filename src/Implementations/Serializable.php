@@ -5,7 +5,7 @@ namespace Kolter\Collections\Implementations;
 use Kolter\Collections\ArrayList;
 
 /**
- * Class KlistSerializable.
+ * Class Serializable.
  */
 trait Serializable
 {
