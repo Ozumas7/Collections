@@ -8,21 +8,7 @@ use Kolter\Comparator\Comparator;
 
 class SorteableTest extends AbstractTest
 {
-    public function testSortBy()
-    {
-        $arr = Collections::newArrayList([6, 3, 7, 5]);
-        $arr2 = [6, 3, 7, 5];
-        $sorteable = $arr->sortBy();
-        $callable = function ($a, $b) {
-            return $a < $b;
-        };
 
-        $this->assertTrue($sorteable instanceof Comparator);
-        $sorteable->byValues()->keepKeys()->sort($callable);
-        uasort($arr2, $callable);
-
-        $this->assertEquals($arr->all(), $arr2);
-    }
 
     public function testShuffle()
     {
