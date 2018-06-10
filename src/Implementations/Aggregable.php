@@ -2,6 +2,7 @@
 
 namespace Kolter\Collections\Implementations;
 
+use Kolter\Collections\Collections;
 use Kolter\Collections\Interfaces\Collection;
 
 /**
@@ -51,7 +52,16 @@ trait Aggregable
      */
     public function addAll(array $elements) : Collection
     {
-        return $this->return(array_merge($this->getElements(), $elements));
+        $result = $this->getElements();
+        $aux = Collections::newArrayList($elements);
+        foreach ($elements as $key=>$value){
+            if($aux->hasAssocKeys()){
+                $result[$key] = $value;
+            } else {
+                $result[] = $value;
+            }
+        }
+        return $this->return($result);
     }
 
     /**

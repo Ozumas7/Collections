@@ -41,4 +41,11 @@ class SelectableTest extends AbstractTest
 
         $this->assertEquals($arr->sublist(1)->all(), ['php' => 'programming', 'ruby' => 'oop', 'python' => 'bigdata']);
     }
+
+    public function testUnique()
+    {
+        $arr = Collections::newArrayList(1,2,1,3);
+
+        $this->assertEquals($arr->unique()->all(),[1,2,3]);
+    }
 }

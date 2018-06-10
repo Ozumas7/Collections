@@ -22,6 +22,14 @@ trait Selectable
     /**
      * @return mixed
      */
+    public function unique()
+    {
+        return $this->return( array_keys(array_flip($this->all())));
+    }
+
+    /**
+     * @return mixed
+     */
     public function first()
     {
         return $this->get($this->keys()[0]);
