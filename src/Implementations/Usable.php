@@ -2,6 +2,7 @@
 
 namespace Kolter\Collections\Implementations;
 
+use Kolter\Collections\ArrayList;
 use Kolter\Collections\Interfaces\Collection;
 
 /**
@@ -18,7 +19,9 @@ trait Usable
      */
     public function getKey($element, $strict = false)
     {
-        $this->noSuchElement($element);
+        if(in_array($element,$this->getElements())){
+            return null;
+        }
 
         return array_search($element, $this->getElements(), $strict);
     }
@@ -56,7 +59,7 @@ trait Usable
      *
      * @return bool
      */
-    public function containsMany(array $elements)
+    public function containsMany(array $elements) : bool
     {
         $result = true;
         foreach ($elements as $value) {
@@ -90,7 +93,7 @@ trait Usable
     /**
      * @return bool
      */
-    public function hasNumericKeys()
+    public function hasNumericKeys() : bool
     {
         return array_keys($this->getElements()) === range(0, count($this->getElements()) - 1);
     }
@@ -98,13 +101,30 @@ trait Usable
     /**
      * @return bool
      */
-    public function hasAssocKeys()
+    public function hasAssocKeys() : bool
     {
         return !$this->hasNumericKeys();
     }
 
-    public function values() : Collection
+    /**
+     * @return ArrayList
+     */
+    public function values() : ArrayList
     {
         return $this->return(array_values($this->getElements()));
     }
+
+    /**
+     * @param int $offset
+     * @param int $length
+     * @param bool $preserveKeys
+     * @return ArrayList
+     */
+    public function slice(int $offset, int $length, $preserveKeys = false) : ArrayList
+    {
+        if($this->hasAssocKeys()) return $this->return($this->all());
+
+        return $this->return(array_slice($this->all(),$offset,$length,$preserveKeys));
+    }
 }
+

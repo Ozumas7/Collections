@@ -2,6 +2,7 @@
 
 namespace Kolter\Collections\Implementations;
 
+use Kolter\Collections\ArrayList;
 use Kolter\Collections\Interfaces\Collection;
 use Kolter\Comparator\Comparator;
 
@@ -18,7 +19,7 @@ trait Sorteable
     /**
      * @return Collection
      */
-    public function shuffle() : Collection
+    public function shuffle() : ArrayList
     {
         $aux = $this->getElements();
         shuffle($aux);
@@ -26,7 +27,7 @@ trait Sorteable
         return $this->return($aux);
     }
 
-    public function reverse($preserveKeys = false) : Collection
+    public function reverse($preserveKeys = false) : ArrayList
     {
         return $this->return(array_reverse($this->all(), $preserveKeys));
     }

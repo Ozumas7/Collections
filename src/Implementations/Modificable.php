@@ -2,6 +2,7 @@
 
 namespace Kolter\Collections\Implementations;
 
+use Kolter\Collections\ArrayList;
 use Kolter\Collections\Interfaces\Collection;
 
 /**
@@ -14,7 +15,7 @@ trait Modificable
      *
      * @return Collection
      */
-    public function filter(callable $callback) : Collection
+    public function filter(callable $callback) : ArrayList
     {
         return $this->return(array_filter($this->getElements(), $callback));
     }
@@ -24,7 +25,7 @@ trait Modificable
      *
      * @return Collection
      */
-    public function map(callable $callback) : Collection
+    public function map(callable $callback) : ArrayList
     {
         return $this->return(array_map($callback, $this->getElements()));
     }
@@ -34,7 +35,7 @@ trait Modificable
      *
      * @return Collection
      */
-    public function intersect($array) : Collection
+    public function intersect($array) : ArrayList
     {
         return $this->return(array_intersect($this->getElements(), $array));
     }
