@@ -24,7 +24,7 @@ trait Selectable
      */
     public function unique()
     {
-        return $this->return( array_keys(array_flip($this->all())));
+        return $this->return(array_values(array_unique($this->all())));
     }
 
     /**
