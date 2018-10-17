@@ -16,7 +16,8 @@
   "autoload": {
     "psr-4": {
       "Kolter\\Collections\\": "src/"
-    }
+    },
+    "files" : ["src/helpers/functions.php"]
   },
   "autoload-dev": {
     "psr-4": { "Kolter\\Collections\\Tests\\": "tests/" }

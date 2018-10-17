@@ -19,9 +19,6 @@ trait Usable
      */
     public function getKey($element, $strict = false)
     {
-        if(in_array($element,$this->getElements())){
-            return null;
-        }
 
         return array_search($element, $this->getElements(), $strict);
     }
@@ -120,7 +117,7 @@ trait Usable
      * @param bool $preserveKeys
      * @return ArrayList
      */
-    public function slice(int $offset, int $length, $preserveKeys = false) : ArrayList
+    public function slice(int $offset, int $length = null, $preserveKeys = false) : ArrayList
     {
         if($this->hasAssocKeys()) return $this->return($this->all());
 

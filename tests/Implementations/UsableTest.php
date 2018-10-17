@@ -22,6 +22,12 @@ class UsableTest extends AbstractTest
         $this->assertFalse($arr->contains('boo2'));
     }
 
+    public function testUnique()
+    {
+        $arr = Collections::newArrayList([1,1,2,3,4,5]);
+        $this->assertTrue($arr->unique()->all() == [1,2,3,4,5]);
+    }
+
     public function testContainsKeys()
     {
         $arr = Collections::newArrayList(['foo' => 'boo', 'php' => 'programming']);

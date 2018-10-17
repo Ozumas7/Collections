@@ -22,9 +22,13 @@ trait Selectable
     /**
      * @return mixed
      */
-    public function unique()
+    public function unique(int $sortFlag = SORT_STRING)
     {
-        return $this->return(array_values(array_unique($this->all())));
+        $result = [];
+        foreach ($this as $value){
+            $result[serialize($value)] = $value;
+        }
+        return $this->return(array_values($result));
     }
 
     /**
@@ -32,6 +36,7 @@ trait Selectable
      */
     public function first()
     {
+        if($this->length()===0) return null;
         return $this->get($this->keys()[0]);
     }
 
@@ -40,6 +45,7 @@ trait Selectable
      */
     public function last()
     {
+        if($this->length()===0) return null;
         return $this->get($this->keys()[$this->length() - 1]);
     }
 
